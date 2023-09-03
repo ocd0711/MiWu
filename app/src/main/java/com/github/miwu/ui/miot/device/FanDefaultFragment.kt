@@ -47,6 +47,7 @@ class FanDefaultFragment(private val miotServices: ArrayList<MiotService>) : Bas
             val siid = i.iid
             when (urn.value) {
                 "fan" -> {
+                    i.properties ?: continue
                     i.properties.forEach { it ->
                         var onPiid = 0
                         val piid = it.iid
